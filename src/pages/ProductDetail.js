@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom";
-import { Rating } from "../components/Elements/Rating";
+import { toast } from "react-toastify";
 import { useTitle } from "../hooks/useTitle";
+import { Rating } from "../components";
 import { useCart } from "../context";
 import { getProduct } from "../services";
-import { toast } from "react-toastify";
 
 export const ProductDetail = () => {
   const { cartList, addToCart, removeFromCart } = useCart();
@@ -15,12 +15,11 @@ export const ProductDetail = () => {
 
   useEffect(() => {
     async function fetchProducts(){
-      setProduct(data);
       try{
-        const data = await getProduct(id)
+        const data = await getProduct(id);
         setProduct(data);
-      } catch(error) {
-        toast.error(error.message, {closeButton: true, position: "bottom-center"});
+      } catch(error){
+        toast.error(error.message, {closeButton: true, position: "bottom-center" });
       }
     }
     fetchProducts();
