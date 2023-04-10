@@ -397,6 +397,12 @@
       "password": "$2a$10$AHb.BJDl5C7ry.FhxQ3TceYdqsqagJnHFbkz5rwrRNUdx8PHK0zqW",
       "name": "Jane Doe",
       "id": 3
+    },
+    {
+      "email": "guest@example.com",
+      "password": "$2a$10$GMX/mS5C33pPzlwE7GO64e16o0tnHDB2jZX4UrwoW3QXDOOUYBA9W",
+      "name": "Undefined",
+      "id": 4
     }
   ]
 }
