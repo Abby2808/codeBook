@@ -18,16 +18,15 @@ export const ProductsList = () => {
 
   useEffect(() => {
     async function fetchProducts(){
-      // const data = await getProductList(searchTerm);
       try {
         const data = await getProductList(searchTerm);
         initialProductList(data);
       } catch(error){
-        toast.error(error.message, {closeButton: true, position: "bottom-center"});
+        toast.error(error.message, {closeButton: true, position: "bottom-center" });
       }
     }
     fetchProducts();
-  }, [searchTerm]);
+  }, [searchTerm]); // eslint-disable-line
 
   return (
     <main>
